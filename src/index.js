@@ -1,12 +1,7 @@
 import store from './store'
-import * as actions from './actionTypes'
+import { bugAdded } from './actions'
 
-store.dispatch({
-    type: actions.BUG_ADDED,
-    payload: {
-        desciption: "Bug1"
-    }
-})
+store.dispatch(bugAdded("bug1"))
 
 console.log(store)
 console.log(store.getState)
