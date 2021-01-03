@@ -1,11 +1,12 @@
-import { compose, pipe } from "lodash/fp"
+import store from './store'
+import * as actions from './actionTypes'
 
-let input = "   Hi   "
-let output = "<div>" + input.trim() + "</div>"
+store.dispatch({
+    type: actions.BUG_ADDED,
+    payload: {
+        desciption: "Bug1"
+    }
+})
 
-const trim = str => str.trim();
-const wrapInDiv = type => str => `<${type}>${str}</${type}>`;
-const toLowerCase = str => str.toLowerCase();
-
-const transform = pipe(trim, toLowerCase, wrapInDiv("div"))
-transform(input)
+console.log(store)
+console.log(store.getState)
