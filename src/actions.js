@@ -9,7 +9,7 @@ export function bugAdded(description) {
     }
 }
 
-export bugResolved = id => ({
+export const bugResolved = id => ({
     type: actions.BUG_RESOLVED,
     payload: {
         id,
